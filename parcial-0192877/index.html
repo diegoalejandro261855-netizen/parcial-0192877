@@ -1,26 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>interfaz Sci-Fi</title>
-        <link rel="stylesheet" href="styles/style.css">
-    </head>
-    <body>
-        <main class"contenedor-principal">
-            <section class="tarjeta tarjeta-izquierda">
-                <h1>GALACTA</h1>
-            </section>
+<head>
+    <meta charset="UTF-8">
+    <title>HUD Galacta - Sci-Fi</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-            <section class="tarjeta tarjeta-derecha-arriba">
-                <h2>VISOR</h2>
-            </section>
+    
+    <main class="hud-pantalla">
+        
+       
+        <section class="modulo modulo-galacta">
+            
+            <nav class="hud-nav">
+                <a href="#" class="active">Visor</a>
+                <a href="#">DEF STATUS</a>
+                <a href="#">EXPLORE</a>
+            </nav>
 
-            <section class="tarjeta tarjeta-derecha-abajo">
-                <h2>TECHNO</h2>
-            </section>
+            <div class="hud-principal-layout">
+                
+                <div class="info-galacta">
+                    <h1 class="logo-galacta">GALACTA</h1>
+                    <p class="sub-log">Welcome to Sector Alpha-7</p>
+                    <p class="hud-texto">Central database connected. All tactical systems are operational. Monitor your suit metrics and resources below.</p>
+                    <button class="btn-hud">CONNECT NOW</button>
+                </div>
+
+
+                  <div class="visor-pj-interno">
+                     <div class="grid-radar-lineas">
+                        <span class="tag-status">STATUS: ONLINE</span>
+                       
+                        <div class="avatar-render">🤖</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="modulo modulo-explore">
+            <h2 class="titulo-modulo">EXPLORE</h2>
+            <p class="hud-texto-sm">Tactical map and regional scanning activated. Sector exploration progress: 67%</p>
+            <button class="btn-hud-sm">SELECT</button>
+        </section>
 
         
+        
+        <section class="modulo modulo-mapa">
+            <div class="mini-mapa-placeholder">
+                <span class="coordenadas">X: 142 // Y: 890</span>
+            </div>
+        </section>
 
-        </main>
-    </body>
+        
+        <section class="modulo modulo-stats">
+            <div class="barra-stat">
+                <span class="label-stat">FUEL</span>
+                <div class="progreso-barra"><div class="llenado" style="width: 80%;"></div></div>
+            </div>
+            <div class="barra-stat">
+                <span class="label-stat">SHIELD</span>
+                <div class="progreso-barra"><div class="llenado" style="width: 55%;"></div></div>
+            </div>
+            <div class="barra-stat">
+                <span class="label-stat">ENERGY</span>
+                <div class="progreso-barra"><div class="llenado" style="width: 90%;"></div></div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
 </html>
