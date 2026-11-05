@@ -1,4 +1,6 @@
 
+
+
 :root {
   --blue:  #95C5F4;
   --white: #FFFFFF;
@@ -11,11 +13,11 @@
   --mono:    "JetBrains Mono", monospace;
 }
 
-/* Si descargas la fuente Technos ponla en /fonts */
+
 @font-face {
   font-family: "Technos";
-  src: url("fonts/Technos.otf") format("opentype"),
-       url("fonts/Technos.ttf") format("truetype");
+  src: url("../fonts/Technos.otf") format("opentype"),
+       url("../fonts/Technos.ttf") format("truetype");
   font-display: swap;
 }
 
@@ -37,16 +39,16 @@ body {
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
 
-/* ---------- Escenario ---------- */
+
 .stage {
   --w: min(94vw, 1280px);
   width: var(--w);
-  font-size: calc(var(--w) / 100);   /* 1em = 1% del ancho */
+  font-size: calc(var(--w) / 100);   
   position: relative;
   padding-top: 12em;
 }
 
-/* ---------- Esquinas cortadas con borde ---------- */
+
 .frame {
   position: relative;
   background: var(--line, #3a3a3a);
@@ -65,7 +67,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .cut-tl   { --clip: polygon(var(--c) 0, 100% 0, 100% 100%, 0 100%, 0 var(--c)); }
 .cut-trbl { --clip: polygon(0 0, calc(100% - var(--c)) 0, 100% var(--c), 100% 100%, var(--c) 100%, 0 calc(100% - var(--c))); }
 
-/* ---------- Botones ---------- */
+
 .btn {
   --c: 1.2em;
   display: inline-block;
@@ -80,32 +82,38 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .btn:hover { filter: brightness(1.12); transform: translateY(-1px); }
 .btn--sm { --c: .8em; padding: 1em 2.4em; font-size: .85em; }
 
-/* ======================= HERO ======================= */
+
 .top {
   position: relative;
   margin-left: 7.2em;
 }
 
-/* franja azul superior (queda visible por el corte del hero) */
 .strip {
   position: absolute;
   top: 0; right: 0;
-  width: 38%;
-  height: 4em;
-  background: var(--blue);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%);
+  z-index: 2;
+  width: 40%;
+  height: 6em;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: .8em;
-  padding: 0 1.4em 0 5em;
+  gap: 1em;
+  padding-right: 2em;
+}
+.strip::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0;
+  width: 4.4em; height: 3.8em;
+  background: var(--blue);
+  clip-path: polygon(0 0, 100% 0, 78% 100%, 0 100%);
 }
 .search {
   display: flex;
   align-items: center;
   gap: .7em;
-  width: 15em;
-  height: 2.4em;
+  width: 24em;
+  height: 3.1em;
   padding: 0 1em;
   background: var(--g2);
   color: var(--g1);
@@ -120,11 +128,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--white);
 }
 .search input::placeholder { color: #8a8a8a; }
-.dot { width: 1.8em; height: 1.8em; border-radius: 50%; }
+.dot { width: 2em; height: 2em; border-radius: 50%; }
 .dot--dark { background: var(--g2); }
-.dot--blue { background: var(--blue); border: .22em solid var(--black); box-shadow: 0 0 0 1px var(--black); }
+.dot--blue { background: var(--blue); }
 
-/* bloque azul detrás de los pies del astronauta */
+
 .foot-blue {
   position: absolute;
   left: -2.6em; bottom: 0;
@@ -137,7 +145,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   position: relative;
   height: 40.5em;
   background: var(--black);
-  clip-path: polygon(0 0, 62% 0, 65.8% 4em, 100% 4em, 100% 100%, 0 100%);
+  clip-path: none;
 }
 
 .nav {
@@ -176,7 +184,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   color: var(--g1);
 }
 
-/* ---------- Visor ---------- */
+
 .viewer {
   position: absolute;
   right: .7em; top: 10.8em;
@@ -245,7 +253,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .arrow--l { left: .8em; }
 .arrow--r { right: .8em; }
 
-/* ---------- Astronauta y aro ---------- */
+
 .astro {
   position: absolute;
   left: -.5em; top: 6.2em;
@@ -256,15 +264,15 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 .ring {
   position: absolute;
-  left: -9em; top: 1em;
-  width: 24em; height: 24em;
+  left: .5em; top: .5em;
+  width: 20em; height: 20em;
   border: .22em solid #1f8fe5;
   border-radius: 50%;
   z-index: 4;
   pointer-events: none;
 }
 
-/* ===================== PANELES INFERIORES ===================== */
+
 .bottom {
   position: relative;
   margin-left: 4.8em;
@@ -278,7 +286,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   clip-path: polygon(0 0, 100% 0, 100% 100%, 3.4em 100%, 0 calc(100% - 3.4em));
 }
 
-/* ---- EXLAR ---- */
+
 .explore {
   padding: 3.2em 3em 0 3.4em;
 }
@@ -324,7 +332,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border: 1px solid #1c1c1c;
 }
 
-/* ---- Reproductor ---- */
+
 .media {
   padding: 1.2em 1.4em;
   text-align: center;
@@ -354,7 +362,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border-radius: 50%;
 }
 
-/* ---- Estadísticas ---- */
 .stats {
   position: relative;
   margin-left: 0;
