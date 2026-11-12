@@ -1,2 +1,1 @@
-# NOMBRE DEL AUTOR DEL DISEÑO DE FIGMA
-www.nickelfox.com
+https://github.com/diegoalejandro261855-netizen/parcial-0192877.git 
