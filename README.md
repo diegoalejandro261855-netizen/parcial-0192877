@@ -1,1 +1,1 @@
-https://github.com/diegoalejandro261855-netizen/parcial-0192877.git 
+https://www.figma.com/design/hQCGmDXnHdZ1WdRn9Y3BGh/AI-Scifi-Gaming-Webiste--Community-?node-id=0-1&p=f&t=yohNKrw71nMq8xDx-0
